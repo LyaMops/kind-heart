@@ -1,0 +1,759 @@
+/* Обнуляю всі відступи*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+/*Бекграунд картинка для сторінки*/
+.background {
+  height: 100vh;
+  position: relative;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url("background.png");
+}
+
+/*Сердечко*/
+.background::before {
+  top: 35%;
+  left: 52%;
+  z-index: 1;
+  width: 40%;
+  height: 60%;
+  content: "";
+  position: absolute;
+  transform: rotate(3deg);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: var(--before-bg, url("heartIsometry.svg"));
+}
+
+/*Верхня панелька*/
+header {
+  width: 100vw;
+  display: flex;
+  color: white;
+  padding: 22px 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoHeart {
+  cursor: pointer;
+}
+
+/*Опції вибору мови*/
+.languageChoice ul li {
+  margin: 0 0.3vw;
+  display: inline-block;
+}
+
+/*Опції вибору іншої сторінки*/
+nav ul li {
+  margin: 0 0.9vw;
+  display: inline-block;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: hsla(200, 10%, 80%, 0.8);
+}
+
+a::after {
+  left: 0;
+  width: 100%;
+  height: 2px;
+  content: "";
+  bottom: -2px;
+  position: absolute;
+  transform: scaleX(0);
+  background-color: #3498db;
+  transition: transform 0.3s ease;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+}
+
+a:active {
+  color: #2980b9;
+  transform: scale(0.95);
+}
+
+.choosenOption {
+  color: blanchedalmond;
+  background-color: rgba (0, 0, 0, 0);
+}
+
+/*Для того, щоб вибір мови чи кнопка пошуку
+    не наїжджала на інші кнопки для малих екранів*/
+@media (min-width: 1200px) {
+  .languageChoice {
+    margin-left: -10vw;
+  }
+
+  .search-btn {
+    margin-right: -10vw;
+  }
+}
+
+/*Скидую зовнішній вигляд кнопок*/
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.3s ease;
+  color: hsla(200, 10%, 80%, 0.8);
+}
+
+.urgentHelp-btn {
+  border: 0;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background: linear-gradient(45deg, #ff006a, #a760b6);
+}
+
+button:hover {
+  transform: translateY(-5px);
+}
+
+button:active {
+  transform: translateY(2px);
+  background-color: #1f6bb2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+main {
+  top: 20%;
+  left: 6%;
+  width: 90vw;
+  position: absolute;
+}
+
+.topSection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12vh;
+}
+
+main h1 {
+  color: white;
+  font-size: 72px;
+  font-weight: 400;
+  margin-right: 3vw;
+  letter-spacing: 3px;
+  display: inline-block;
+}
+
+.moreDetails,
+.addProject {
+  margin-top: 2vh;
+  font-size: 18px;
+}
+
+.clipdown {
+  width: 18px;
+  border-radius: 50%;
+  margin-left: 0.75vw;
+}
+
+.midSection {
+  margin-bottom: 10vh;
+}
+
+.midSection p {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.midSection p::before {
+  left: 0%;
+  top: -40%;
+  width: 5%;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: white;
+}
+
+.FAQ {
+  font-size: 20px;
+  margin-right: 5vw;
+}
+
+.helpNow {
+  border: 0;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 16px 40px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 30px rgb(219, 52, 94);
+  background-color: hsla(0, 0%, 0%, 0.25);
+}
+
+.midSection p,
+.bottomSection p {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.midSection p::before,
+.bottomSection p::before {
+  left: 0%;
+  top: -40%;
+  width: 5%;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: white;
+}
+
+footer {
+  left: 6%;
+  bottom: 3vh;
+  width: 94%;
+  display: flex;
+  position: absolute;
+  align-items: center;
+}
+
+footer p {
+  font-size: 15px;
+  margin-right: 1vw;
+  display: inline-block;
+  color: hsla(200, 10%, 80%, 0.8);
+}
+
+footer ul {
+  display: inline-block;
+}
+
+footer ul li {
+  margin: 0 0.6vw;
+  display: inline-block;
+}
+
+.share {
+  width: 3vh;
+  height: 3vh;
+}
+
+.i-chat {
+  width: 10vh;
+}
+
+.b-chat {
+  bottom: 0;
+  right: 4vh;
+  position: absolute;
+}
+
+/* Меню поиска */
+.searchOverlay {
+  position: fixed;
+  top: 12px;
+  left: 2.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  /* Выше всех остальных элементов */
+  transform: translate(100%, 0) scale(0.8);
+  transition: transform 0.25s ease;
+}
+
+.searchOverlay.searchOverlayActive {
+  transform: translate(0, 0) scale(1);
+}
+
+.searchContainer {
+  display: flex;
+  width: 95vw;
+  height: 80px;
+  backdrop-filter: blur(10px);
+  /* Эффект блюра заднего фона */
+  background: none;
+  border-radius: 15px;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 10px;
+  font-size: 32px;
+  font-weight: bold;
+  color: rgba(46, 63, 105, 1);
+  border: none;
+  border-radius: 15px 0 0 15px;
+  background: rgba(197, 213, 230, 0.5);
+  outline: none;
+}
+
+.closeSearch {
+  padding: 0 20px;
+  border-radius: 0 15px 15px 0;
+  background: rgba(197, 213, 230, 0.5);
+}
+
+.searchResult {
+  position: fixed;
+  display: none;
+  top: 112px;
+  background: rgba(197, 213, 230, 0.5);
+  backdrop-filter: blur(10px);
+  /* Эффект блюра заднего фона */
+  border-radius: 15px;
+  width: 95vw;
+}
+
+.search {
+  display: inline-flex;
+  width: 100%;
+  min-height: 125px;
+  align-items: center;
+}
+
+.searchSections {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0 40px;
+}
+
+.searchArchives .searchSections {
+  border-top: 1px solid rgba(255, 255, 255, 1);
+}
+
+.searchTitle {
+  width: 25%;
+  padding-left: 50px;
+  font-size: 24px;
+  font-family: "Crimson Text", sans-serif;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.searchSection h3 {
+  font-size: 18px;
+  font-family: "Crimson Text", sans-serif;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.searchSection li {
+  font-size: 14px;
+  font-family: "Crimson Text", sans-serif;
+  font-weight: 400;
+  line-height: 18.2px;
+  color: rgba(255, 255, 255, 1);
+  padding: 15px 0;
+  width: 250px;
+}
+
+.searchSection li:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 1);
+}
+
+.search ul,
+.search ul {
+  list-style: none;
+}
+
+.subtheme {
+  display: none;
+}
+
+/*Types of Help - модуль видів допомоги*/
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  /* по горизонталі */
+  align-items: center;
+  /* по вертикалі */
+  opacity: 0;
+  transform: translate(0, 100%) scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal.active {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.modalOverlay {
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: absolute;
+  background-color: rgba(197, 213, 230, 0.65);
+  backdrop-filter: blur(10px);
+}
+
+.modalClose {
+  position: relative;
+  top: -15px;
+  right: calc(-100% + 59px);
+}
+
+.modalClose img {
+  min-width: 44px;
+  mix-height: 44px;
+  cursor: pointer;
+}
+
+.modalContent {
+  z-index: 10;
+}
+
+.modalMain {
+  width: 90vw;
+  height: 75vh;
+  padding: 30px;
+  max-width: 1340px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 15px;
+}
+
+.modalGrid {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.helpCard {
+  width: 22.5%;
+}
+
+.modalTitle {
+  text-align: center;
+  font-size: 64px;
+  font-family: "Crimson Text", sans-serif;
+  font-weight: 400;
+  padding: 50px 0 37px;
+}
+
+.helpIconContainer {
+  display: flex;
+  align-items: center;
+}
+
+.helpIconContainer div {
+  min-width: 80px;
+  min-height: 80px;
+  border: 2px solid rgba(197, 213, 230, 1);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.helpTitle {
+  font-size: 18px;
+  font-family: "Crimson Text", sans-serif;
+  font-weight: 400;
+  line-height: 23.4px;
+}
+
+.helpDescription {
+  width: calc(100% - 100px);
+  float: right;
+  font-size: 12px;
+  font-family: "Crimson Text", sans-serif;
+  font-weight: 400;
+  line-height: 15.6px;
+}
+
+// Projects
+
+//.currentProjectsPage { } Я ЄБУ ШО ЦЕ ЗА БАГ -
+//ЯКЩО ОДИН ДІСПЛЕЙ НОН ТО ВОНО ПРОСТО НЕ ПРАЦЮЄ -
+//ПРИБЕРЕШ СКОБКИ В КОМЕНТАРІ З ПРАВОГО БОКУ І ПІЗДА{}
+
+.currentProjectsPage {
+  display: none;
+  position: absolute;
+  top: 79px;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  overflow-x: hidden; /* Отключаем горизонтальный скролл */
+}
+
+.currentProjectsThemes {
+  margin: 0 auto;
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.currentProjectsThemes .currentProjectsTheme {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.currentProjectsTheme h2 {
+  color: rgba(255, 255, 255, 1);
+  font-size: 64px;
+  font-family: "Crimson Text", sans-serif;
+  font-weight: 400;
+  opacity: 0.15;
+  display: inline-block;
+}
+
+.currentProjectsTheme p {
+  display: inline-block;
+  padding: 15px;
+  font-size: 20px;
+  font-family: "Crimson Text", sans-serif;
+  font-weight: 400;
+  color: rgba(230, 53, 84, 1);
+}
+
+.currentProjectsTheme.currentProjectsThemeActive h2 {
+  opacity: 1;
+}
+
+.showTypesOfHelp {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-family: "Crimson Text", sans-serif;
+  font-weight: 400;
+  color: rgba(197, 213, 230, 1);
+}
+
+.showTypesOfHelpSection {
+  width: 90vw;
+  max-width: 1400px;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: right;
+}
+
+.showTypesOfHelp img {
+  padding: 0 10px;
+  transform: rotate(0deg);
+  transition: transform 0.4s ease;
+}
+
+.showTypesOfHelp.showTypesOfHelpActive img {
+  padding: 0 10px;
+  transform: rotate(90deg);
+}
+
+.currentProjectsList {
+  width: 100vw;
+  height: 70vh;
+  display: none;
+}
+
+.currentProject {
+  display: flex;
+  width: 90vw;
+  height: 100px;
+  margin: 0 auto;
+  max-width: 1400px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(216, 216, 216, 1);
+  cursor: pointer;
+}
+
+.currentProjectMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5px 20px;
+  width: 75%;
+  font-size: 14px;
+  font-family: "Crimson Text", sans-serif;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.currentProjectActive img {
+  opacity: 1;
+}
+
+.currentProjectImage {
+  width: 400px;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 1);
+  opacity: 0.5;
+}
+
+.currentProjectDescription {
+  width: 75%;
+  display: none;
+}
+
+.currentProjectTypesOfHelp {
+  flex-direction: column;
+  justify-content: space-around;
+  display: none;
+  visibility: hidden;
+}
+
+.currentProjectTypesOfHelp .helpIcon {
+  background-color: rgba(156, 93, 154, 1);
+  border-radius: 5px;
+  padding: 6px;
+  width: 40px;
+  height: 40px;
+}
+
+.currentProjectProgress {
+  display: none;
+}
+
+.currentProject.currentProjectActive {
+  height: 200px;
+}
+
+.currentProjectActive .currentProjectDescription,
+.currentProjectActive .currentProjectTypesOfHelp,
+.currentProjectActive .currentProjectProgress {
+  display: flex;
+}
+
+.currentProjectsListActive {
+  display: block;
+}
+
+.form {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  /* по горизонталі */
+  align-items: center;
+  /* по вертикалі */
+  opacity: 0;
+  transform: translate(0, 100%) scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.form.formActive {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.formOverlay {
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: absolute;
+  background-color: rgba(197, 213, 230, 0.65);
+  backdrop-filter: blur(10px);
+}
+
+.formClose {
+  position: relative;
+  top: -15px;
+  right: calc(-100% + 59px);
+}
+
+.formClose img {
+  min-width: 44px;
+  mix-height: 44px;
+  cursor: pointer;
+}
+
+.formContent {
+  z-index: 10;
+}
+
+.formMain {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.formMain input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.help-types {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+.help-types div {
+  padding: 15px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+.payment-methods div {
+  padding: 10px;
+  background: #d1d1d1;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.donate-button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(90deg, #ff6b6b, #ff4757);
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
