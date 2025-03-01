@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="background">
+    <div class="background"></div>
         <!-- Вспливашка яка на початку задізейблена,
           викликається кнопкою ЯК ВИ МОЖЕТЕ ДОПОМОГТИ
           
@@ -234,39 +234,86 @@
 
         <div class="form">
             <div class="formOverlay"></div>
-            <div class="formContent">
+            
+            <div class="formMenu">
                 <button class="formClose">✖</button>
-                <h2>Заповніть форму</h2>
-                <div class="formMain">
-                    <input type="text" placeholder="Ім'я">
-                    <input type="text" placeholder="Фамілія">
-                    <input type="text" placeholder="Назва компанії, організації">
-                    <input type="text" placeholder="Місто">
-                    <input type="email" placeholder="Email-адрес">
-                    <input type="text" placeholder="Адреса">
-                    <input type="tel" placeholder="Номер телефону">
-                    <input type="text" placeholder="Поштовий індекс">
+                <div class="formContent">
+                    <h2>Заповніть форму</h2>
+                    <div class="formMain">
+                        <div class="formGroup">
+                            <label for="first-name">Ім'я</label>
+                            <input type="text" id="first-name">
+                        </div>
+                    
+                        <div class="formGroup">
+                            <label for="last-name">Фамілія</label>
+                            <input type="text" id="last-name">
+                        </div>
+                    
+                        <div class="formGroup">
+                            <label for="company">Назва компанії, організації</label>
+                            <input type="text" id="company">
+                        </div>
+                    
+                        <div class="formGroup">
+                            <label for="country">Країна</label>
+                            <input type="text" id="country">
+                        </div>
+                    
+                        <div class="formGroup">
+                            <label for="city">Місто</label>
+                            <input type="text" id="city">
+                        </div>
+                    
+                        <div class="formGroup">
+                            <label for="state">Штат, район</label>
+                            <input type="text" id="state">
+                        </div>
+                    
+                        <div class="formGroup">
+                            <label for="email">Email-адрес</label>
+                            <input type="email" id="email">
+                        </div>
+                    
+                        <div class="formGroup">
+                            <label for="address">Адреса</label>
+                            <input type="text" id="address">
+                        </div>
+                    
+                        <div class="formGroup">
+                            <label for="phone">Номер телефону</label>
+                            <input type="tel" id="phone">
+                        </div>
+                    
+                        <div class="formGroup">
+                            <label for="zip">Поштовий індекс</label>
+                            <input type="text" id="zip">
+                        </div>
+                    </div>
+                
+                    <h2>Види допомоги</h2>
+                    <div class="help-types">
+                        <div>Зробити</div>
+                        <div>Фінансова допомога</div>
+                        <div>Матеріальна допомога</div>
+                        <div>Волонтерство</div>
+                    </div>
+                    <h3>Способи оплати</h3>
+                    <div>
+                        <div class="payment-methods">
+                            <div>VISA</div>
+                            <div>Приват24</div>
+                            <div>Термінали України</div>
+                            <div>WebMoney</div>
+                            <div>PayPal</div>
+                        </div>
+                        <div class="payment-method-info"></div>
+                    </div>
+                    <button class="donate-button">Допомогти</button>
                 </div>
-                <h2>Види допомоги</h2>
-                <div class="help-types">
-                    <div>Зробити</div>
-                    <div style="background:#805ad5; color:white;">Фінансова допомога</div>
-                    <div>Матеріальна допомога</div>
-                </div>
-                <h3>Способи оплати</h3>
-                <div class="payment-methods">
-                    <div>VISA</div>
-                    <div style="background:#805ad5; color:white;">Приват24</div>
-                    <div>Термінали України</div>
-                    <div>PayPal</div>
-                </div>
-                <button class="donate-button">Допомогти</button>
             </div>
         </div>
         
-        <div class="contacts">
-
-        </div>
         <!-- Header і нижче нормальна частина сторінки -->
         <header>
 
@@ -286,7 +333,7 @@
                 <ul>
                     <li class="navButtonProjects"><a href="#">Проекти</a></li>
                     <li class="navButtonArchives"><a href="#">Архів</a></li>
-                    <li><a href="#">Контакти</a></li>
+                    <li class="navButtonContacts"><a href="#">Контакти</a></li>
                     <li><button class="urgentHelp-btn">Термінова допомога</button></li>
                 </ul>
             </nav>           
@@ -324,6 +371,21 @@
             </div>
 
         </main> 
+        <!-- hidden Contact шоб не паритися з розміщенням-->
+        <div class="contact">
+            <div class="contactMain">
+                <h2 class="number">+38 (077) 777 77 77</h2>
+                <h2 class="email">help@kindheart.ua</h2>
+                <p class="contactDescription">Заповніть своє ім’я і контактні дані, і Вам нададуть консультацію по телефону</p>
+                <div class="contactInputs">
+                <form action="">
+                    <input type="text" pattern="[A-Za-zА-Яа-яЁёІіЇїЄє]+" title="Введіть тільки літери" class="input contactInput contactInputText" placeholder="Ім'я" required>
+                    <input type="tel" pattern="\+?[0-9]{10,15}" title="Введіть коректний номер (10-15 цифр, можна почати з +)" class="input contactInput contactInputPhoneNumber" placeholder="Телефон" required>
+                    <button type="submit" class="contactSubmit">Телефон</button>
+                </form>
+                </div>
+            </div>
+        </div>
 
         <!-- Footer -->
         <footer>
@@ -335,7 +397,6 @@
                 </ul>
                 <button class="b-chat"><img class="i-chat" src="./images/chat.svg"></button>
         </footer>
-    </div>      
 
     <script src="script.js"></script>
 </body>

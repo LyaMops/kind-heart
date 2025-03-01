@@ -16,6 +16,7 @@ async function getDatabase() {
 document.addEventListener("DOMContentLoaded", async () => {
   database = await getDatabase();
 });
+
 setTimeout(() => {
 }, 1000);
 
@@ -35,7 +36,7 @@ function parsingProjects(currentPage, currentTheme, currentUrgency) {
       dataItem.project_type === currentPage && dataItem.project_division.toLowerCase() === currentTheme
     )
   }
-  console.log(filteredDatabase, currentUrgency === "urgent");
+
 
   let numberOfPassedProjects = 0;
   for (project in filteredDatabase) {
@@ -146,7 +147,6 @@ function parsingProjects(currentPage, currentTheme, currentUrgency) {
       }
 
       if (urgent === '1') {
-        console.log('ura?');
         let project_urgent = document.createElement('p');
         project_urgent.innerText = `Терміново`;
         project_urgent.classList.add('currentProjectUrgent');
@@ -209,10 +209,10 @@ modalClose.addEventListener('click', function() {
 
 
 
-const input = document.querySelector('.searchInput');
+const searchInput = document.querySelector('.searchInput');
 const searchResult = document.querySelector('.searchResult');
 
-input.addEventListener('input', function() {
+searchInput.addEventListener('input', function() {
   let value = this.value.trim().toLowerCase();
   
 
@@ -261,6 +261,8 @@ const footer = document.querySelector('footer');
 const navButtonProjects = document.querySelector('.navButtonProjects');
 const navButtonArchives = document.querySelector('.navButtonArchives');
 const navButtonUrgentHelp = document.querySelector('.urgentHelp-btn');
+const navButtonContacts = document.querySelector('.navButtonContacts')
+const contacts = document.querySelector('.contact');
 const currentProjectsPage = document.querySelector('.currentProjectsPage');
 let currentPage;
 let currentTheme = "war";
@@ -271,6 +273,7 @@ function openProjectsList() {
     main.style.display = 'none';
     footer.style.display = 'none';
     currentProjectsPage.style.display = 'block';
+    contacts.style.display = 'none';
 }
 
 navButtonProjects.addEventListener('click', function() {
@@ -364,6 +367,7 @@ logo.addEventListener('click', function() {
   background.style.backgroundImage = 'url(./images/background.png)';
   background.style.setProperty('--before-bg', 'url("./images/heartIsometry.svg")');
   currentProjectsPage.style.display = 'none';
+  contacts.style.display = 'none';
 })
 
 const currentProjectsThemes = document.querySelectorAll('.currentProjectsTheme');
@@ -399,7 +403,7 @@ currentProjectsThemes.forEach(btn => {
         }
       })
     }
-    else {
+    else {  
       currentProjectTypesOfHelp.forEach(icons => {
         icons.style.visibility = "hidden";
     })
@@ -412,7 +416,6 @@ const buttonShowTypesOfHelp = document.querySelector('.showTypesOfHelp');
 
 function showTypesOfHelp() {
   let currentProjectTypesOfHelp = document.querySelectorAll('.currentProjectTypesOfHelp');
-  console.log(visibleStatus);
   if (visibleStatus){
     currentProjectTypesOfHelp.forEach(icons => {
       icons.style.visibility = 'hidden';
@@ -442,3 +445,48 @@ formClose.addEventListener('click', function() {
   form.classList.remove('formActive');
 })
 
+navButtonContacts.addEventListener('click', function() {
+  console.log('pracuje');
+  main.style.display = 'none';
+  footer.style.display = 'flex';
+  background.style.backgroundImage = 'url(./images/blandBackground.png)';
+  background.style.setProperty('--before-bg', 'url()');
+  currentProjectsPage.style.display = 'none';
+  contacts.style.display = 'flex';
+})
+
+const contactInputText = document.querySelector('.contactInputText');
+const contactInputPhoneNumber = document.querySelector('.contactInputPhoneNumber');
+
+contactInputText.addEventListener('input', function() {
+  validateText(this);
+})
+
+contactInputPhoneNumber.addEventListener('input', function() {
+  validatePhone(this);
+})
+
+
+function isOnlyText(input) {
+  return /^[a-zA-Zа-яА-ЯіІїЇєЄґҐ\s]+$/.test(input);
+}
+
+function isPhoneNumber(input) {
+  return /^\+\d{10,15}$/.test(input);
+}
+
+function validateText(input) {
+  if (!isOnlyText(input.value)) {
+      input.style.borderColor = "red";
+  } else {
+      input.style.borderColor = "green";
+  }
+}
+
+function validatePhone(input) {
+  if (!isPhoneNumber(input.value)) {
+      input.style.borderColor = "red";
+  } else {
+      input.style.borderColor = "green";
+  }
+}

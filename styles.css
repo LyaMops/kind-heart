@@ -8,8 +8,10 @@
 
 /*Бекграунд картинка для сторінки*/
 .background {
+  z-index: -1;
   height: 100vh;
-  position: relative;
+  width: 100vw;
+  position: absolute;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -389,7 +391,7 @@ footer ul li {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 10;
   display: flex;
   justify-content: center;
   /* по горизонталі */
@@ -678,7 +680,7 @@ footer ul li {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 10;
   display: flex;
   justify-content: center;
   /* по горизонталі */
@@ -709,33 +711,49 @@ footer ul li {
   backdrop-filter: blur(10px);
 }
 
-.formClose {
+.formMenu {
   position: relative;
-  top: -15px;
-  right: calc(-100% + 59px);
+  z-index: 10;
+  max-height: 80vh;
 }
 
-.formClose img {
-  min-width: 44px;
-  min-height: 44px;
+.formClose {
+  position: absolute;
+  top: -80px;
+  right: 20px;
+  font-size: 44px;
   cursor: pointer;
+  color: #2e3f6980;
 }
 
 .formContent {
-  z-index: 10;
+  width: 90vw;
+  max-height: 80vh;
+  padding: 30px;
+  overflow-x: hidden;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 15px;
 }
 
+.formContent h2 {
+  text-align: center;
+  font-size: 64px;
+  color: #363b5d;
+  margin: 20px 0 100px;
+}
 .formMain {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(2, 1fr);
 }
+
 .formMain input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
 .help-types {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -773,3 +791,64 @@ footer ul li {
   cursor: pointer;
   margin-top: 20px;
 }
+
+/* Contacts */
+
+.contact {
+  display: none;
+  width: 60vw;
+  margin: 250px auto 0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.contact h2 {
+  font-size: 64px;
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+.contact p {
+  font-size: 18px;
+  color: #fff;
+  margin-top: 100px;
+}
+
+.input {
+  background-color: #c5d5e6;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 1px solid #ccc;
+}
+
+.contact form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contactInput {
+  width: 200px;
+  height: 40px;
+  padding: 10px;
+}
+
+.contactSubmit {
+  text-align: center;
+  width: 200px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+
+// не працює поєбота на цю хуйню блять, треба поміняти бекграунд
