@@ -1,3 +1,189 @@
+let database
+
+async function getDatabase() {
+  try {
+    let response = await fetch('http://localhost:3000/idinahuj');
+    if (!response.ok) {
+      throw new Error('Error - there are problems with receiving database!');
+    }
+    let data = await response.json();
+    return data;
+  } catch(error) {
+    console.error('Error:', error);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  database = await getDatabase();
+});
+setTimeout(() => {
+}, 1000);
+
+function parsingProjects(currentPage, currentTheme, currentUrgency) {
+
+  if (projectsDiv.childElementCount > 0) {
+    return;
+  }
+
+  let filteredDatabase;
+
+  if (currentUrgency === "urgent") {
+      filteredDatabase = database.filter(dataItem => dataItem.project_type === currentPage && dataItem.project_division.toLowerCase() === currentTheme && dataItem.urgent === "1")
+    }
+  else {
+    filteredDatabase = database.filter(dataItem => 
+      dataItem.project_type === currentPage && dataItem.project_division.toLowerCase() === currentTheme
+    )
+  }
+  console.log(filteredDatabase, currentUrgency === "urgent");
+
+  let numberOfPassedProjects = 0;
+  for (project in filteredDatabase) {
+    let amount_needed = filteredDatabase[project].amount_needed;
+    let amount_raised = filteredDatabase[project].amount_raised;
+    let description = filteredDatabase[project].description;
+    let title = filteredDatabase[project].title;
+    let urgent = filteredDatabase[project].urgent;
+    let project_type = filteredDatabase[project].project_type;
+    let project_division = filteredDatabase[project].project_division;
+    let financial_help = filteredDatabase[project].financial_help;
+    let material_help = filteredDatabase[project].material_help;
+    let responsibility = filteredDatabase[project].responsibility;
+    let volunteering = filteredDatabase[project].volunteering;
+    let picture = filteredDatabase[project].picture;
+    let start_date = filteredDatabase[project].start_date;
+
+    // project_type = Project / Archive
+    // currentPage = Project / Archive
+    // currentTheme = war / ecology / children / education
+    // project_division = War / Ecology / Children / Education
+    
+    let external_div = document.createElement('div');
+    let internal_img = document.createElement('img');
+    let internal_div_1 = document.createElement('div');
+    let internal_div_2 = document.createElement('div');
+
+    external_div.classList.add('currentProject');
+
+    internal_div_1.classList.add('currentProjectMain');
+    internal_div_2.classList.add('currentProjectTypesOfHelp');
+
+    let project_date = document.createElement('h5');
+    project_date.innerText = start_date;
+    project_date.classList.add('currentProjectDate');
+
+    let project_title = document.createElement('h2');
+    project_title.innerText = title;
+    project_title.classList.add('currentProjectTitle');
+
+    let project_description = document.createElement('p');
+    project_description.innerText = description;
+    project_description.classList.add('currentProjectDescription');
+
+    if (responsibility === '1') {
+      let responsibility_icon = document.createElement('img');
+      responsibility_icon.classList.add('helpIcon');
+      responsibility_icon.src = './images/hand.svg';
+      internal_div_2.appendChild(responsibility_icon);
+    }
+
+    if (financial_help === '1') {
+      let financial_help_icon = document.createElement('img');
+      financial_help_icon.classList.add('helpIcon');
+      financial_help_icon.src = './images/wallet.svg';
+      internal_div_2.appendChild(financial_help_icon);
+    }
+
+    if (material_help === '1') {
+      let material_help_icon = document.createElement('img');
+      material_help_icon.classList.add('helpIcon');
+      material_help_icon.src = './images/clothes.svg';
+      internal_div_2.appendChild(material_help_icon);
+    }
+
+    if (volunteering === '1') {
+      let volunteering_icon = document.createElement('img');
+      volunteering_icon.classList.add('helpIcon');
+      volunteering_icon.src = './images/donation.svg';
+      internal_div_2.appendChild(volunteering_icon);
+    }
+
+    if (numberOfPassedProjects === 0) {
+      external_div.classList.add('currentProjectActive');
+    }
+
+    external_div.append(internal_img, internal_div_1, internal_div_2);
+
+    external_div.addEventListener('mouseenter', function() {
+      projectsDiv.querySelector('.currentProjectActive').classList.remove('currentProjectActive');
+      external_div.classList.add('currentProjectActive');
+    })
+    if (currentPage === "Project" && urgency === "urgent") {
+      internal_img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFPhKoZ_IkWmfWKe4fh5CdzCTRlG1xYGGq7A&s";
+      internal_img.classList.add('currentProjectImage');
+      let project_progress = document.createElement('p');
+      project_progress.innerText = `Зібрано ${amount_raised} з ${amount_needed} UAH`;
+      project_progress.classList.add('currentProjectProgress');
+      
+      internal_div_1.append(project_date, project_title, project_description, project_progress);
+
+      external_div.addEventListener('click', function() {
+        form.classList.add('formActive');
+      })
+
+      projectsDiv.appendChild(external_div);
+
+      numberOfPassedProjects++;  
+    }
+    else if (currentPage === "Project"){
+      if (urgent === "1") {
+        internal_img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFPhKoZ_IkWmfWKe4fh5CdzCTRlG1xYGGq7A&s";
+        internal_img.classList.add('currentProjectImage');
+      }
+      else {
+        internal_img.src = "./images/Kids.png";
+        internal_img.classList.add('currentProjectImage');
+      }
+
+      if (urgent === '1') {
+        console.log('ura?');
+        let project_urgent = document.createElement('p');
+        project_urgent.innerText = `Терміново`;
+        project_urgent.classList.add('currentProjectUrgent');
+        external_div.appendChild(project_urgent);
+      }
+      
+      let project_progress = document.createElement('p');
+      project_progress.innerText = `Зібрано ${amount_raised} з ${amount_needed} UAH`;
+      project_progress.classList.add('currentProjectProgress');
+      
+      internal_div_1.append(project_date, project_title, project_description, project_progress);
+
+      external_div.addEventListener('click', function() {
+        form.classList.add('formActive');
+      })
+
+
+      projectsDiv.appendChild(external_div);
+
+      numberOfPassedProjects++;  
+    }
+    
+    else if (currentPage === "Archive") {
+      internal_img.src = "https://images.theconversation.com/files/386487/original/file-20210225-19-1vd7g8f.jpg?ixlib=rb-4.1.0&rect=50%2C0%2C6579%2C4466&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip";
+      internal_img.classList.add('currentProjectImage');
+      internal_div_1.append(project_date, project_title, project_description);
+
+      projectsDiv.appendChild(external_div);
+
+      numberOfPassedProjects++;
+
+    }
+
+  }
+  
+}
+
 let search = document.querySelector(".searchOverlay");
 let closeSearch = document.querySelector(".closeSearch");
 let openSearch = document.querySelector(".search-btn");
@@ -73,82 +259,184 @@ const logo = document.querySelector('.logoHeart');
 const main = document.querySelector('main');
 const footer = document.querySelector('footer');
 const navButtonProjects = document.querySelector('.navButtonProjects');
+const navButtonArchives = document.querySelector('.navButtonArchives');
+const navButtonUrgentHelp = document.querySelector('.urgentHelp-btn');
 const currentProjectsPage = document.querySelector('.currentProjectsPage');
+let currentPage;
+let currentTheme = "war";
+let urgency = "";
+let visibleStatus = false;
+
+function openProjectsList() {
+    main.style.display = 'none';
+    footer.style.display = 'none';
+    currentProjectsPage.style.display = 'block';
+}
 
 navButtonProjects.addEventListener('click', function() {
-  main.style.display = 'none';
-  footer.style.display = 'none';
-  background.style.backgroundImage = 'url(blandBackground.png)'
+  background.style.backgroundImage = 'url(./images/blandBackground.png)'
   background.style.setProperty('--before-bg', 'none');
-  currentProjectsPage.style.display = 'block';
-})
+  Array.from(document.getElementsByClassName('currentProjectsTheme')).forEach(element => {
+    element.querySelector('p').style.color = "rgba(230, 53, 84, 1)";})
+  openProjectsList();
+  currentPage = "Project";
+  urgency = "";
+  document.querySelectorAll('.currentProject').forEach(project => {
+    project.remove();
+  })
+  parsingProjects(currentPage, currentTheme);
+  document.getElementsByClassName('currentProjectsThemeActive')[0].querySelector('p').innerText = projectsDiv.childElementCount;
+  let currentProjectTypesOfHelp = document.querySelectorAll('.currentProjectTypesOfHelp');
+  if (visibleStatus) {
+    currentProjectTypesOfHelp.forEach(icons => {
+      icons.style.visibility = "visible";
+      icons.querySelectorAll("img").forEach(icon => icon.style.backgroundColor = "#9C5D9A");
+    })
+  }
+  else {
+    currentProjectTypesOfHelp.forEach(icons => {
+      icons.style.visibility = "hidden";
+      icons.querySelectorAll("img").forEach(icon => icon.style.backgroundColor = "#9C5D9A");
+  })
+}
+});
+
+navButtonArchives.addEventListener('click', function() {
+  background.style.backgroundImage = 'url(./images/blandBackground.png)'
+  background.style.setProperty('--before-bg', 'none');
+  Array.from(document.getElementsByClassName('currentProjectsTheme')).forEach(element => {
+    element.querySelector('p').style.color = "rgba(230, 53, 84, 1)";})
+  openProjectsList();
+  currentPage = "Archive";
+  urgency = "";
+  document.querySelectorAll('.currentProject').forEach(project => {
+    project.remove();
+  })
+  parsingProjects(currentPage, currentTheme);
+  document.getElementsByClassName('currentProjectsThemeActive')[0].querySelector('p').innerText = projectsDiv.childElementCount;
+  let currentProjectTypesOfHelp = document.querySelectorAll('.currentProjectTypesOfHelp');
+  if (visibleStatus) {
+    currentProjectTypesOfHelp.forEach(icons => {
+      icons.style.visibility = "visible";
+      icons.querySelectorAll("img").forEach(icon => icon.style.backgroundColor = "#9C5D9A");
+    })
+  }
+  else {
+    currentProjectTypesOfHelp.forEach(icons => {
+      icons.style.visibility = "hidden";
+      icons.querySelectorAll("img").forEach(icon => icon.style.backgroundColor = "#9C5D9A");
+  })
+}
+});
+
+navButtonUrgentHelp.addEventListener('click', function() {
+  background.style.backgroundImage = 'url(./images/work-urgent.png)';
+  background.style.setProperty('--before-bg', 'none');
+  openProjectsList();
+  currentPage = "Project";
+  urgency = "urgent";
+  document.querySelectorAll('.currentProject').forEach(project => {
+    project.remove();
+  })
+  parsingProjects(currentPage, currentTheme, urgency);
+  document.getElementsByClassName('currentProjectsThemeActive')[0].querySelector('p').innerText = projectsDiv.childElementCount;
+  Array.from(document.getElementsByClassName('currentProjectsTheme')).forEach(element => {
+    element.querySelector('p').style.color = "#8492F3";
+  })
+  let currentProjectTypesOfHelp = document.querySelectorAll('.currentProjectTypesOfHelp');
+  if (visibleStatus) {
+    currentProjectTypesOfHelp.forEach(icons => {
+      icons.style.visibility = "visible";
+      icons.querySelectorAll("img").forEach(icon => icon.style.backgroundColor = "#8492F3");
+    })
+  }
+  else {
+    currentProjectTypesOfHelp.forEach(icons => {
+      icons.style.visibility = "hidden";
+      icons.querySelectorAll("img").forEach(icon => icon.style.backgroundColor = "#8492F3");
+  })
+}
+});
 
 logo.addEventListener('click', function() {
   main.style.display = 'block';
   footer.style.display = 'flex';
-  background.style.backgroundImage = 'url(background.png)';
-  background.style.setProperty('--before-bg', 'url("heartIsometry.svg")');
+  background.style.backgroundImage = 'url(./images/background.png)';
+  background.style.setProperty('--before-bg', 'url("./images/heartIsometry.svg")');
   currentProjectsPage.style.display = 'none';
 })
 
-const currentProjectsListWar = document.querySelector('#currentProjectsListWar');
 const currentProjectsThemes = document.querySelectorAll('.currentProjectsTheme');
-const currentProjectsLists = document.querySelectorAll('.currentProjectsList');
-currentProjectsThemes[0].querySelector('p').innerHTML = currentProjectsListWar.childElementCount;
+const projectsDiv = document.querySelector('#projects');
+
 currentProjectsThemes.forEach(btn => {
-  btn.addEventListener('click', function() {
+  btn.addEventListener('click', async function() {
     //Потрібні змінні
+    document.querySelectorAll('.currentProject').forEach(project => {
+      project.remove();
+    })
     let targetId = btn.getAttribute('data-target');
-    let targetElement = document.getElementById(targetId);
-    let targetNumberOfProjects = targetElement.childElementCount;
+    currentTheme = targetId.split('-')[1];
+
+    parsingProjects(currentPage, currentTheme, urgency);
+    
 
     //Маніпуляції з кнопкою
     currentProjectsThemes.forEach(theme => {
       theme.classList.remove('currentProjectsThemeActive');
-      theme.querySelector('p').innerHTML = '';
+      theme.querySelector('p').innerText = '';
     })
     btn.classList.add('currentProjectsThemeActive');
-    btn.querySelector('p').innerHTML = targetNumberOfProjects;
+    btn.querySelector('p').innerText = projectsDiv.childElementCount;
 
-    //Маніпуляції зі списком
-    currentProjectsLists.forEach(list => {
-      list.classList.remove('currentProjectsListActive');
-    })
-    targetElement.classList.add('currentProjectsListActive');
-  })
-})
-
-const currentProjectTypesOfHelp = document.querySelectorAll('.currentProjectTypesOfHelp');
-const buttonShowTypesOfHelp = document.querySelector('.showTypesOfHelp');
-
-buttonShowTypesOfHelp.addEventListener('click', function() {
-  if (window.getComputedStyle(currentProjectTypesOfHelp[0]).getPropertyValue('visibility') === 'hidden'){
-    currentProjectTypesOfHelp.forEach(icons => {
-      icons.style.visibility = 'visible';
+    //Робимо кнопочки видів допомоги видимими чи ні
+    let currentProjectTypesOfHelp = document.querySelectorAll('.currentProjectTypesOfHelp');
+    if (visibleStatus) {
+      currentProjectTypesOfHelp.forEach(icons => {
+        icons.style.visibility = "visible";
+        if (urgency === "urgent") {
+          icons.querySelectorAll("img").forEach(icon => icon.style.backgroundColor = "#8492F3");
+        }
+      })
+    }
+    else {
+      currentProjectTypesOfHelp.forEach(icons => {
+        icons.style.visibility = "hidden";
     })
   }
-  else{
+})
+})
+
+
+const buttonShowTypesOfHelp = document.querySelector('.showTypesOfHelp');
+
+function showTypesOfHelp() {
+  let currentProjectTypesOfHelp = document.querySelectorAll('.currentProjectTypesOfHelp');
+  console.log(visibleStatus);
+  if (visibleStatus){
     currentProjectTypesOfHelp.forEach(icons => {
       icons.style.visibility = 'hidden';
     })
+
+    visibleStatus = false;
   }
-  this.classList.toggle('showTypesOfHelpActive');
+  else{
+    currentProjectTypesOfHelp.forEach(icons => {
+      icons.style.visibility = 'visible';
+    })
+    visibleStatus = true;
+  }
+
+  buttonShowTypesOfHelp.classList.toggle('showTypesOfHelpActive');
+}
+
+
+buttonShowTypesOfHelp.addEventListener('click', function() {
+  showTypesOfHelp();
 })
 
 const form = document.querySelector('.form');
 const formClose = document.querySelector('.formClose');
-
-currentProjectsLists.forEach(list => {
-  list.querySelectorAll('.currentProject').forEach(project => {
-    project.addEventListener('mouseenter', function() {
-      list.querySelector('.currentProjectActive').classList.remove('currentProjectActive');
-      project.classList.add('currentProjectActive');
-    })
-    project.addEventListener('click', function() {
-      form.classList.add('formActive');
-    })
-  })
-})
 
 formClose.addEventListener('click', function() {
   form.classList.remove('formActive');

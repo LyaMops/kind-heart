@@ -14,17 +14,21 @@
 <body>
     <div class="background">
         <!-- Вспливашка яка на початку задізейблена,
-          викликається кнопкою ЯК ВИ МОЖЕТЕ ДОПОМОГТИ-->
+          викликається кнопкою ЯК ВИ МОЖЕТЕ ДОПОМОГТИ
+          
+          ЗАЛИШАЮ БЕЗ ЗМІН
+
+        -->
         <div class="modal">
             <div class="modalOverlay"></div>
             <div class="modalContent">
-                <button class="modalClose"><img src="X.svg"></button>
+                <button class="modalClose"><img src="./images/X.svg"></button>
                 <div class="modalMain">
                     <h1 class="modalTitle">Види допомоги</h1>
                     <div class="modalGrid">
                         <div class="helpCard">
                             <div class="helpIconContainer">
-                                <div><img class="helpIcon" src="hand.svg"></div>
+                                <div><img class="helpIcon" src="./images/hand.svg"></div>
                                 <h3 class="helpTitle">Зробити</h3>
                             </div>
                             
@@ -41,14 +45,14 @@
                         </div>
                         <div class="helpCard">
                             <div class="helpIconContainer">
-                                <div><img class="helpIcon" src="wallet.svg"></div>
+                                <div><img class="helpIcon" src="./images/wallet.svg"></div>
                                 <h3 class="helpTitle">Фінансова допомога</h3>
                             </div>
                             <p class="helpDescription">Перераховуйте гроші тим, хто дійсно потребує цього. </p>
                         </div>
                         <div class="helpCard">
                             <div class="helpIconContainer">
-                                <div><img class="helpIcon" src="clothes.svg"></div>
+                                <div><img class="helpIcon" src="./images/clothes.svg"></div>
                                 <h3 class="helpTitle">Матеріальна допомога</h3>
                             </div>
                             <p class="helpDescription">Зберіть ліки, речі, їжу,
@@ -56,7 +60,7 @@
                         </div>
                         <div class="helpCard">
                             <div class="helpIconContainer">
-                                <div><img class="helpIcon" src="donation.svg"></div>
+                                <div><img class="helpIcon" src="./images/donation.svg"></div>
                                 <h3 class="helpTitle">Волонтерство</h3>
                             </div>
                             <p class="helpDescription">Допоможіть ділом або професійними навичками. 
@@ -67,14 +71,24 @@
             </div>
         </div>
 
+
+        <!-- 
+
+          ТРЕБА ЗМІНИТИ на зовнішню базу даних і підвантаження
+
+        -->
+
         <div class="searchOverlay">
             <div class="searchContainer">
                 <input type="text" class="searchInput" placeholder="Пошук">
-                <button class="closeSearch"><img src="X.svg"></button>
+                <button class="closeSearch"><img src="images/X.svg"></button>
             </div>
             
             <div class="searchResult">
-                <!-- Блок для проєктів -->
+                <!-- Блок для проєктів 
+                 
+                ТРЕБА ЗМІНИТИ на зовнішню базу даних і підвантаження
+                -->
                 <div class="searchProjects search">
                   <h2 class="searchTitle">Проекти</h2>
                   <div class="searchSections">
@@ -178,569 +192,45 @@
               </div>
         </div>
         
+        <!-- 
+
+          Зроблено - проєкти
+
+        -->
+
         <div class="currentProjectsPage">
             <div class="currentProjectsThemes">
-                <div data-target="currentProjectsListWar"class="currentProjectsTheme currentProjectsThemeActive">
+                <div data-target="projects-war"class="currentProjectsTheme currentProjectsThemeActive">
                     <h2>Війна</h2>
                     <p class="numberOfProjects"></p>
                 </div>
-                <div data-target="currentProjectsListEcology" class="currentProjectsTheme">
+                <div data-target="projects-ecology" class="currentProjectsTheme">
                     <h2>Екологія</h2>
                     <p class="numberOfProjects"></p>
                 </div>
-                <div data-target="currentProjectsListChildren" class="currentProjectsTheme">
+                <div data-target="projects-children" class="currentProjectsTheme">
                     <h2>Діти</h2>
                     <p class="numberOfProjects"></p>
                 </div>
-                <div data-target="currentProjectsListEducation" class="currentProjectsTheme">
+                <div data-target="projects-education" class="currentProjectsTheme">
                     <h2>Освіта</h2>
                     <p class="numberOfProjects"></p>
                 </div>
             </div>
             <div class="showTypesOfHelpSection">
                 <button class="showTypesOfHelp">
-                    Види допомоги<img src="clipdown.svg">
+                    Види допомоги<img src="./images/clipdown.svg">
                 </button>
             </div>
-            <div id="currentProjectsListWar" class="currentProjectsList currentProjectsListActive">
-                <div class="currentProject currentProjectActive">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку WAR</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-
-            </div>
-            <!-- Ecology -->
-            <div id="currentProjectsListEcology" class="currentProjectsList">
-                <div class="currentProject currentProjectActive">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку ECOLOGY</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-
-            </div>
-            <!-- Children -->
-            <div id="currentProjectsListChildren" class="currentProjectsList">
-                <div class="currentProject currentProjectActive">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку CHILDREN</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-            </div>
-            <!-- Children -->
-            <div id="currentProjectsListEducation" class="currentProjectsList">
-                <div class="currentProject currentProjectActive">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку EDUCATION</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
-                <div class="currentProject">
-                    <img src="Kids.png" class="currentProjectImage">
-                    <div class="currentProjectMain">
-                        <h5 class="currentProjectDate">11.02.2025</h5>
-                        <h2 class="currentProjectTitle">Необхідна допомога дитячому будинку</h2>
-                        <p class="currentProjectDescription">Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. </p>
-                        <p class="currentProjectProgress">Зібрано 10000 з 25000 UAH</p>
-                    </div>
-                    <div class="currentProjectTypesOfHelp">
-                        <img src="hand.svg" alt="" class="helpIcon">
-                        <img src="wallet.svg" alt="" class="helpIcon">
-                        <img src="clothes.svg" alt="" class="helpIcon">
-                        <img src="donation.svg" alt="" class="helpIcon">
-                    </div>
-                </div>
+            <div id="projects" class="currentProjectsList currentProjectsListActive">
             </div>
         </div>
+        <!-- Archives-->
+        <!-- 
+          
+          ХОЧУ ЗРОБИТИ ЗАРАЗ І НОРМАЛЬНО ЧЕРЕЗ GRID
+
+        -->
 
         <div class="form">
             <div class="formOverlay"></div>
@@ -781,7 +271,7 @@
         <header>
 
             <!--Логотип-->
-            <img class="logoHeart" src="logoHeart.svg">
+            <img class="logoHeart" src="./images/logoHeart.svg">
 
             <!--Вибір мови-->
             <div class="languageChoice">
@@ -795,7 +285,7 @@
             <nav>
                 <ul>
                     <li class="navButtonProjects"><a href="#">Проекти</a></li>
-                    <li><a href="#">Архів</a></li>
+                    <li class="navButtonArchives"><a href="#">Архів</a></li>
                     <li><a href="#">Контакти</a></li>
                     <li><button class="urgentHelp-btn">Термінова допомога</button></li>
                 </ul>
@@ -803,7 +293,7 @@
 
             <!--Кнопка пошуку-->            
             <button class="search-btn">
-                <img src="Shape.svg">
+                <img src="./images/Shape.svg">
             </button>
 
             <!--Вхід/Реєстрація-->
@@ -816,21 +306,21 @@
 
             <div class="topSection">
                 <h1>Добре Серце</h1>
-                <button class="moreDetails">детальніше про проект<img class="clipdown" src="clipdown.svg"></button>
+                <button class="moreDetails">детальніше про проект<img class="clipdown" src="./images/clipdown.svg"></button>
             </div>
 
             <div class="midSection">
                 <p>Вже зараз Ви можете допомогти тим, хто дійсно</br> потребує допомоги</p>
                 <div>
                     <!--FAQ - Frequently Asked Questions-->
-                    <button class="FAQ">Як Ви можете допомогти<img class="clipdown" src="clipdown.svg"></button>
+                    <button class="FAQ">Як Ви можете допомогти<img class="clipdown" src="./images/clipdown.svg"></button>
                     <button class="helpNow">Допомогти вже зараз</button>
                 </div>
             </div>
 
             <div class="bottomSection">
                 <p>Якщо Вам необхідна допомога, додайте проект</p>
-                <button class="addProject">Додати проект<img class="clipdown" src="plus.svg"></button>
+                <button class="addProject">Додати проект<img class="clipdown" src="./images/plus.svg"></button>
             </div>
 
         </main> 
@@ -839,11 +329,11 @@
         <footer>
                 <p>Розповісти всім:</p>
                 <ul>
-                    <li><button><img class="share" src="twitter.svg"></button></li>
-                    <li><button><img class="share" src="facebook.svg"></button></li>
-                    <li><button><img class="share" src="penis.svg"></button></li>
+                    <li><button><img class="share" src="./images/twitter.svg"></button></li>
+                    <li><button><img class="share" src="./images/facebook.svg"></button></li>
+                    <li><button><img class="share" src="./images/penis.svg"></button></li>
                 </ul>
-                <button class="b-chat"><img class="i-chat" src="chat.svg"></button>
+                <button class="b-chat"><img class="i-chat" src="./images/chat.svg"></button>
         </footer>
     </div>      
 

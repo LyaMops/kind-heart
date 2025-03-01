@@ -13,7 +13,7 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-image: url("background.png");
+  background-image: url("./images/background.png");
 }
 
 /*Сердечко*/
@@ -29,7 +29,7 @@
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: var(--before-bg, url("heartIsometry.svg"));
+  background-image: var(--before-bg, url("./images/heartIsometry.svg"));
 }
 
 /*Верхня панелька*/
@@ -405,7 +405,6 @@ footer ul li {
 .modal.active {
   opacity: 1;
   transform: translate(0, 0) scale(1);
-  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
   visibility: visible;
   pointer-events: all;
 }
@@ -502,7 +501,8 @@ footer ul li {
 //ЯКЩО ОДИН ДІСПЛЕЙ НОН ТО ВОНО ПРОСТО НЕ ПРАЦЮЄ -
 //ПРИБЕРЕШ СКОБКИ В КОМЕНТАРІ З ПРАВОГО БОКУ І ПІЗДА{}
 
-.currentProjectsPage {
+.currentProjectsPage,
+.currentArchivesPage {
   display: none;
   position: absolute;
   top: 79px;
@@ -512,7 +512,8 @@ footer ul li {
   overflow-x: hidden; /* Отключаем горизонтальный скролл */
 }
 
-.currentProjectsThemes {
+.currentProjectsThemes,
+.currentArchivesThemes {
   margin: 0 auto;
   display: flex;
   width: 70%;
@@ -520,7 +521,7 @@ footer ul li {
   margin-bottom: 30px;
 }
 
-.currentProjectsThemes .currentProjectsTheme {
+.currentProjectsTheme {
   display: flex;
   width: 200px;
   justify-content: center;
@@ -585,6 +586,7 @@ footer ul li {
 }
 
 .currentProject {
+  position: relative;
   display: flex;
   width: 90vw;
   height: 100px;
@@ -593,6 +595,7 @@ footer ul li {
   overflow: hidden;
   border-bottom: 1px solid rgba(216, 216, 216, 1);
   cursor: pointer;
+  transition: height 0.4s;
 }
 
 .currentProjectMain {
@@ -612,10 +615,23 @@ footer ul li {
 }
 
 .currentProjectImage {
-  width: 400px;
+  min-width: 400px;
   height: 200px;
   background-color: rgba(0, 0, 0, 1);
   opacity: 0.5;
+}
+
+.currentProjectUrgent {
+  width: 90px;
+  height: 24px;
+  background: linear-gradient(45deg, #ff006a, #a760b6);
+  border-radius: 5px;
+  position: absolute;
+  text-align: center;
+  line-height: 24px;
+  color: #fff;
+  bottom: 10px;
+  left: 10px;
 }
 
 .currentProjectDescription {
